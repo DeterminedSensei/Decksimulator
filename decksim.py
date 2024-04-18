@@ -29,9 +29,9 @@ if __name__ == "__main__":
         if len(Userinput.split()) == 1:
             if Userinput == "draw":
                 handcards.append(cards.pop())
-            if Userinput == "hand":
+            elif Userinput == "hand":
                 print(handcards)
-            if Userinput == "decklist":
+            elif Userinput == "decklist":
                 print(cards)
             else:
                 print("Den Command gibt es gar nicht du Idiot")
@@ -39,17 +39,17 @@ if __name__ == "__main__":
             command = Userinput.split()
             if command[0] == "add":
                 handcards.append(" ".join(command[1:]))
-            if command[0] == "use":
+            elif command[0] == "use":
                 try:
                     handcards.remove(" ".join(command[1:]))
                 except:
                     print("Du hast die Karte gar nicht auf der Hand du Idiot")
-            if command[0] == "draw":
+            elif command[0] == "draw":
                 try:
                     handcards.append(cards.pop(cards.index(" ".join(command[1:]))))
                 except:
                     print("Eine solche Karte gibt es nicht in deinem Deck")
-            if command[0] == "deck":
+            elif command[0] == "deck":
                 cards.append(" ".join(command[1:]))
                 random.shuffle(cards)
             else:
