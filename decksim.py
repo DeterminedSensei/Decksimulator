@@ -24,7 +24,7 @@ if __name__ == "__main__":
     random.shuffle(cards)
     handcards = []
     Userinput = ""
-    while(not (Userinput == "quit")):
+    while(True):
         Userinput = input()
         if len(Userinput.split()) == 1:
             if Userinput == "draw":
@@ -36,6 +36,8 @@ if __name__ == "__main__":
                 print(cards)
             elif Userinput == "shuffle":
                 random.shuffle(cards)
+            elif Userinput =="quit":
+                exit()
             else:
                 print("Den Command gibt es gar nicht du Idiot")
         else:
@@ -55,9 +57,15 @@ if __name__ == "__main__":
             elif command[0] == "deck":
                 cards.append(" ".join(command[1:]))
                 random.shuffle(cards)
+            elif command[0] == "back":
+                try:
+                    handcards.remove(" ".join(command[1:]))
+                    cards.append(" ".join(command[1:]))
+                    random.shuffle(cards)
+                except:
+                    print("Du hast die Karte gar nicht auf der Hand du Idiot")
             else:
                 print("Der Command existiert gar nicht")
-    exit()
 
 
 
