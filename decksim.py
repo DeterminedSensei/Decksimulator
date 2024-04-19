@@ -29,6 +29,7 @@ if __name__ == "__main__":
         if len(Userinput.split()) == 1:
             if Userinput == "draw":
                 handcards.append(cards.pop())
+                print(handcards)
             elif Userinput == "hand":
                 print(handcards)
             elif Userinput == "decklist":
@@ -58,4 +59,3 @@ if __name__ == "__main__":
 
 
 
-        
