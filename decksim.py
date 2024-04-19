@@ -34,6 +34,8 @@ if __name__ == "__main__":
                 print(handcards)
             elif Userinput == "decklist":
                 print(cards)
+            elif Userinput == "shuffle":
+                random.shuffle(cards)
             else:
                 print("Den Command gibt es gar nicht du Idiot")
         else:
